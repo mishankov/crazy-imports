@@ -1,4 +1,4 @@
 import crazyimports.sqlite
-import code_database
+import database
 
-print(code_database.raw_data[0]["code"])
+print(database.code[0]["code"])

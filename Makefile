@@ -18,11 +18,11 @@ lint:
 		python -m black .; \
 	)
 
-test:
+test: install
 	( \
 		. venv/bin/activate; \
 		cd tests; \
 		python utils/init_db.py; \
 		python -m pytest; \
-		rm code_database.sqlite3; \
+		rm database.sqlite3; \
 	)
