@@ -27,5 +27,6 @@ jobs:
         python setup.py install
     - name: Run Tests
       run: |
+        cd tests
         python utils/init_db.py
         python -m pytest
