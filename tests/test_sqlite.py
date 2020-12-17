@@ -1,6 +1,6 @@
 import sqlite3
 import crazyimports.sqlite
-import database
+import tests.database as database
 
 
 def test_sqlite():

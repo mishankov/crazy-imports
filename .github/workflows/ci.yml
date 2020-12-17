@@ -28,6 +28,5 @@ jobs:
         pip install pytest
     - name: Run Tests
       run: |
-        cd tests
-        python utils/init_db.py
+        python tests/utils/init_db.py
         python -m pytest

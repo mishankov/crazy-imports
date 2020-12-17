@@ -1,5 +1,5 @@
 import crazyimports.json
-import config
+import tests.config as config
 
 
 def test_number():
