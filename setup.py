@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="crazyimports", # Replace with your own username
+    name="crazyimports",  # Replace with your own username
     version="0.0.1",
     author="Denis Mishankov",
     author_email="mishankov@mail.com",
@@ -18,5 +18,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )
