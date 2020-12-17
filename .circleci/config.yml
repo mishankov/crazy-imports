@@ -23,13 +23,10 @@ jobs:
           command: pip install pytest
           name: Install pytest
       - run:
-          command: cd tests
-          name: Navigate to tests directory
-      - run:
-          command: cd tests && python utils/init_db.py
+          command: python tests/utils/init_db.py
           name: Initialize test database
       - run:
-          command: cd tests && python -m pytest
+          command: python -m pytest
           name: Run tests
 
 workflows:
