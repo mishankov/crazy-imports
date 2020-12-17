@@ -18,15 +18,7 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - run:
-          command: python -m venv venv
-          name: Create venv
-      - run:
-          command: source venv/bin/activate
-          name: Activate venv
-      - run:
-          command: python setup.py install
-          name: Install crazyimports
+      - dist
       - run:
           command: pip install pytest
           name: Install pytest
