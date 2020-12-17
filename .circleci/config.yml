@@ -19,6 +19,9 @@ jobs:
     steps:
       - checkout
       - run:
+          command: python setup.py install
+          name: Install crazyimports
+      - run:
           command: pip install pytest
           name: Install pytest
       - run:
