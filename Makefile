@@ -27,15 +27,6 @@ test: install
 		rm database.sqlite3; \
 	)
 
-test-ci:
-	( \
-		pip install pytest; \
-		cd tests; \
-		python utils/init_db.py; \
-		python -m pytest; \
-		rm database.sqlite3; \
-	)
-
 build-package: 
 	( \
 		. venv/bin/activate; \
