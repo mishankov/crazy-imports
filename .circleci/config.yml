@@ -22,7 +22,7 @@ jobs:
           command: python -m venv venv
           name: Create venv
       - run:
-          command: . venv/bin/activate
+          command: source venv/bin/activate
           name: Activate venv
       - run:
           command: python setup.py install
