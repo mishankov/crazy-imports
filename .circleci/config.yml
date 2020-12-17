@@ -19,6 +19,12 @@ jobs:
     steps:
       - checkout
       - run:
+          command: python -m venv venv
+          name: Create venv
+      - run:
+          command: . venv/bin/activate
+          name: Activate venv
+      - run:
           command: python setup.py install
           name: Install crazyimports
       - run:
