@@ -2,6 +2,10 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-black)](https://github.com/mishankov/github-push-events-telegram-bot/actions?query=workflow%3Ablack)
 ![CI](https://github.com/mishankov/crazy-imports/workflows/CI/badge.svg)
+[![PyPI](https://img.shields.io/pypi/v/crazyimports)](https://pypi.org/project/crazyimports/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/crazyimports)
+![PyPI - Implementation](https://img.shields.io/pypi/implementation/crazyimports)
+[![PyPI - License](https://img.shields.io/pypi/l/crazyimports)](https://github.com/mishankov/crazy-imports/blob/main/LICENSE)
 
 
 `crazyimports` module allows you to use your data as if it was python modules
