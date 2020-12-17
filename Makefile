@@ -1,7 +1,28 @@
+install:
+	( \
+		. venv/bin/activate; \
+		python setup.py install; \
+	)
+
 install-dev:
 	( \
 		python3 -m venv venv; \
 		. venv/bin/activate; \
-		pip3 install --upgrade pip; \
-		pip3 install -r requirements-dev.txt; \
+		pip install --upgrade pip; \
+		pip install -r requirements-dev.txt; \
+	)
+
+lint:
+	 ( \
+		. venv/bin/activate; \
+		python -m black .; \
+	)
+
+test:
+	( \
+		. venv/bin/activate; \
+		cd tests; \
+		python utils/init_db.py; \
+		python -m pytest; \
+		rm code_database.sqlite3; \
 	)

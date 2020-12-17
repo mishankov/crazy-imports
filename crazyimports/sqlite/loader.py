@@ -6,7 +6,7 @@ class SQLite(ExDataLoader):
     ext = ".sqlite3"
 
     def exec_module(self, mod):
-        conn = sqlite3.connect("code_database.sqlite3")
+        conn = sqlite3.connect("database.sqlite3")
         conn.row_factory = sqlite3.Row
         cur = conn.cursor()
         cur.execute("SELECT * FROM code")
