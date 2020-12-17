@@ -18,9 +18,7 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - run:
-          command: pip install -e
-          name: Install crazyimports
+      - python/dist
       - run:
           command: pip install pytest
           name: Install pytest
