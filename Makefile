@@ -1,4 +1,4 @@
-install:
+install: lint
 	( \
 		. venv/bin/activate; \
 		python setup.py install; \
