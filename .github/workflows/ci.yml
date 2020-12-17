@@ -25,6 +25,7 @@ jobs:
     - name: Install Application
       run: |
         python setup.py install
+        pip install pytest
     - name: Run Tests
       run: |
         cd tests
