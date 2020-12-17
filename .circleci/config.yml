@@ -21,16 +21,7 @@ jobs:
       - checkout
       - python/load-cache
       - run:
-          command: pip install pytest
-          name: Install pytest
-      - run:
-          command: cd tests
-          name: Navigate to tests directory
-      - run:
-          command: python utils/init_db.py
-          name: Initialize test database
-      - run:
-          command: python -m pytest
+          command: make test
           name: Run tests
 
 workflows:
