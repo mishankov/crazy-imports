@@ -1,4 +1,4 @@
 import crazyimports.json
-import config
+import example
 
-print(config.__dict__)
+print(example.number)
