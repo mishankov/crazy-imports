@@ -1,1 +1,1 @@
-from .loader import SQLite
+from .loader import SQLite3
