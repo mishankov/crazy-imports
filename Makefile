@@ -29,6 +29,7 @@ test: install
 
 test-ci:
 	( \
+		pip install pytest; \
 		cd tests; \
 		python utils/init_db.py; \
 		python -m pytest; \
