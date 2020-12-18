@@ -1,6 +1,7 @@
 install: lint
 	( \
 		. venv/bin/activate; \
+		pip uninstall crazyimports -y; \
 		python setup.py install; \
 	)
 
