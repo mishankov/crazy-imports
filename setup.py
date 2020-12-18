@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="crazyimports",  # Replace with your own username
-    version="0.0.1",
+    name="crazyimports",
+    version="0.0.2",
     author="Denis Mishankov",
     author_email="mishankov@mail.com",
     description="Treat your data as your code",
