@@ -2,7 +2,6 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-black)](https://github.com/mishankov/crazy-imports/actions?query=workflow%3Ablack)
 ![CI](https://github.com/mishankov/crazy-imports/workflows/CI/badge.svg)
-[![CircleCI](https://img.shields.io/circleci/build/github/mishankov/crazy-imports)](https://app.circleci.com/pipelines/github/mishankov/crazy-imports)
 [![PyPI](https://img.shields.io/pypi/v/crazyimports)](https://pypi.org/project/crazyimports/)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/crazyimports)
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/crazyimports)
