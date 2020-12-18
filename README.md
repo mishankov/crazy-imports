@@ -8,8 +8,7 @@
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/crazyimports)
 [![PyPI - License](https://img.shields.io/pypi/l/crazyimports)](https://github.com/mishankov/crazy-imports/blob/main/LICENSE)
 
-
-`crazyimports` module allows you to use your data as if it was python modules
+`crazyimports` module allows you to use your data files as if it was python modules
 
 ## Installation
 
@@ -40,6 +39,7 @@ This and other examples you can find in `examples/` folder
 
 - `.json` for JSON files
 - `.sqlite3` for SQLite3 database files
+- `.csv` for CSV (Comma Separated Values) files
 
 ## Inspiration
 
