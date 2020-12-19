@@ -9,6 +9,9 @@
 
 `crazyimports` module allows you to use your data files as if it was python modules
 
+- [Documentation](https://mishankov.github.io/crazy-imports/)
+- [GitHub repo](https://github.com/mishankov/crazy-imports)
+
 ## Simple example
 
 Install `crazyimports` module
