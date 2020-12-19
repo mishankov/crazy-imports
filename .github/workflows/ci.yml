@@ -48,7 +48,7 @@ jobs:
     needs:
       - code-style-check
       - test
-    if: $ {{ github.event.release.created }}
+    if: ${{ github.event.release.created }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
