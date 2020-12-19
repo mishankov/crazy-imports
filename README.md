@@ -1,7 +1,8 @@
 # Crazy Imports - treat your data as your code
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-black)](https://github.com/mishankov/crazy-imports/actions?query=workflow%3Ablack)
+
 ![CI](https://github.com/mishankov/crazy-imports/workflows/CI/badge.svg)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-black)](https://github.com/mishankov/crazy-imports/actions?query=workflow%3Ablack)
 [![PyPI](https://img.shields.io/pypi/v/crazyimports)](https://pypi.org/project/crazyimports/)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/crazyimports)
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/crazyimports)
@@ -39,6 +40,7 @@ This and other examples you can find in `examples/` folder
 - `.json` for JSON files
 - `.sqlite3` for SQLite3 database files
 - `.csv` for CSV (Comma Separated Values) files
+- `.yaml` for YAML files
 
 ## Inspiration
 

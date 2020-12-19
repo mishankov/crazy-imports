@@ -10,6 +10,7 @@ pluggy==0.13.1
 py==1.10.0
 pyparsing==2.4.7
 pytest==6.2.1
+PyYAML==5.3.1
 regex==2020.11.13
 toml==0.10.2
 typed-ast==1.4.1
