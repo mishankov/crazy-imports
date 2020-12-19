@@ -1,6 +1,6 @@
 # Inspiration
 
-This package was heavili inspired by this talk by [@bobuk](https://github.com/bobuk):
+This package was heavily inspired by this talk by [@bobuk](https://github.com/bobuk):
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CWZVNgStgbI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
