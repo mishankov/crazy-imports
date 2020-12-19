@@ -36,3 +36,10 @@ build-package:
 		python3 -m pip install --upgrade twine; \
 		python3 -m twine upload dist/* ; \
 	)
+
+prepare-docs:
+	( \
+		cp README.md docs/index.md; \
+	)
+
+prepare-push: lint prepare-docs

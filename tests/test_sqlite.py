@@ -1,4 +1,3 @@
-import sqlite3
 import crazyimports
 import tests.test_data.database_sqlite as database
 
