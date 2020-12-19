@@ -27,7 +27,7 @@ Create `example.json` file with this content
  Than in the same directory create `test.py` file
 
 ```python
-import crazyimports.json
+import crazyimports
 import example
 
 print(example.number)
