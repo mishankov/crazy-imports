@@ -14,7 +14,7 @@ install-dev:
 	)
 
 lint:
-	 ( \
+	( \
 		. venv/bin/activate; \
 		python -m black .; \
 	)

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="crazyimports",
-    version="0.0.2",
+    version="0.0.3",
     author="Denis Mishankov",
     author_email="mishankov@mail.com",
     description="Treat your data as your code",
@@ -22,4 +22,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
+    extras_require={"yaml": ["PyYAML==5.3.1"]},
 )
