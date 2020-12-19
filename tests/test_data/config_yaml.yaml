@@ -1,3 +1,4 @@
+type: "yaml"
 number: 42
 string: "apple"
 object:

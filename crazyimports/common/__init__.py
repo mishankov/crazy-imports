@@ -13,15 +13,18 @@ class ExPathFinder(importlib.abc.MetaPathFinder):
             fullname = fullname.split(".")[-1]
         for cat in path:
             for mod in ex_registry:
-                in_path = os.path.join(cat, fullname) + mod.ext
-                if os.path.exists(in_path):
-                    return importlib.util.spec_from_file_location(
-                        name=fullname + mod.ext, location=in_path, loader=mod()
-                    )
+                for mod_ext in mod.extensions:
+                    in_path = os.path.join(cat, fullname) + mod_ext
+                    if os.path.exists(in_path):
+                        return importlib.util.spec_from_file_location(
+                            name=fullname + mod_ext, location=in_path, loader=mod()
+                        )
         return None
 
 
 class ExDataLoader(importlib.abc.Loader):
+    extensions = []
+
     def repack(self, mod, data):
         if type(data) == dict:
             for k, v in data.items():
@@ -39,5 +42,5 @@ class ExDataLoader(importlib.abc.Loader):
 
     def __init_subclass__(self):
         ex_registry.append(self)
-        if not hasattr(self, "ext"):
-            setattr(self, "ext", "." + self.__name__.lower())
+        if not hasattr(self, "extensions") or len(getattr(self, "extensions")) == 0:
+            setattr(self, "extensions", ["." + self.__name__.lower()])

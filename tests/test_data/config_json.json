@@ -1,4 +1,5 @@
 {
+    "type": "json",
     "number": 42,
     "string": "apple",
     "object": {

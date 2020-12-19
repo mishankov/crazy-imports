@@ -1,5 +1,9 @@
-import crazyimports.json
-import tests.test_data.config as config
+import crazyimports
+import tests.test_data.config_json as config
+
+
+def test_json_file_type():
+    assert config.__file__.split(".")[-1] == "json"
 
 
 def test_json_integer_type():

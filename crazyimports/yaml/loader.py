@@ -2,6 +2,8 @@ from crazyimports.common import ExDataLoader
 
 
 class YAML(ExDataLoader):
+    extensions = [".yaml", ".yml"]
+
     def load_data(self, data):
         try:
             import yaml
