@@ -24,7 +24,8 @@ test: install
 		. venv/bin/activate; \
 		python tests/utils/init_db.py; \
 		python -m pytest; \
-		rm tests/test_data/database.sqlite3; \
+		rm tests/test_data/database_sqlite.sqlite; \
+		rm tests/test_data/database_sqlite3.sqlite3; \
 	)
 
 build-package: 

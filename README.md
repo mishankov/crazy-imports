@@ -37,9 +37,9 @@ This and other examples you can find in `examples/` folder
 ## Supported file extensions
 
 - `.json` for JSON files
-- `.sqlite3` for SQLite3 database files
+- `.sqlite3` and `.sqlite` for SQLite3 database files
 - `.csv` for CSV (Comma Separated Values) files
-- `.yaml` for YAML files
+- `.yaml` and `.yml` for YAML files
 
 ## Inspiration
 

@@ -1,0 +1,6 @@
+type: "yml"
+number: 42
+string: "apple"
+object:
+    number: 43
+    string: "orange"

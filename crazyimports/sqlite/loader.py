@@ -3,6 +3,8 @@ from crazyimports.common import ExDataLoader
 
 
 class SQLite3(ExDataLoader):
+    extensions = [".sqlite3", ".sqlite"]
+
     def exec_module(self, mod):
         data = self.load_data(mod.__spec__.origin)
         self.repack(mod, data)

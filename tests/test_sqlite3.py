@@ -1,10 +1,10 @@
 import sqlite3
 import crazyimports
-import tests.test_data.database_sqlite as database
+import tests.test_data.database_sqlite3 as database
 
 
 def test_sqlite_file_type():
-    assert database.__file__.split(".")[-1] == "sqlite"
+    assert database.__file__.split(".")[-1] == "sqlite3"
 
 
 def test_sqlite_text_type():
