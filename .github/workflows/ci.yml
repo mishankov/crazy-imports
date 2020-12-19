@@ -38,7 +38,7 @@ jobs:
     - name: Install Application
       run: |
         python setup.py install
-        pip install -r requirements-dev.txt;
+        pip install -r requirements-test.txt;
     - name: Run Tests
       run: |
         python tests/utils/init_db.py
@@ -78,4 +78,5 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material
+      - run: cp README.md docs/index.md
       - run: mkdocs gh-deploy --force
