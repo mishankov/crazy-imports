@@ -1,0 +1,29 @@
+site_name: Crazy Imports 
+site_description: 'Crazy Imports: treat your data as your code'
+remote_branch: docs
+theme:
+  name: material
+  palette:
+    primary: yellow
+    accent: purple
+    scheme: slate
+  features:
+  - search.suggest
+  - search.highligh
+nav:
+  - Home: 'index.md'
+  - Instalaltion: 'installation.md'
+  - Examples:
+    - JSON: 'examples/json.md'
+    - YAML: 'examples/yaml.md'
+    - CSV: 'examples/csv.md'
+    - SQLite: 'examples/sqlite.md'
+  - Credits: 'credits.md'
+markdown_extensions:
+  - toc:
+      permalink: true
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - admonition
+  - codehilite
+  - extra
