@@ -5,14 +5,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="crazyimports",
-    version="0.0.4",
+    version="0.0.5",
     author="Denis Mishankov",
     author_email="mishankov@mail.com",
     description="Treat your data as your code",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/mishankov/crazy-imports",
-    packages=setuptools.find_packages(),
+    packages=[package for package in setuptools.find_packages() if package != "tests"],
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
