@@ -10,7 +10,7 @@ on:
 
 jobs:
   code-style-check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v1
       - name: Set up Python 3.7
@@ -28,7 +28,7 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
-        os: [ubuntu-latest, macOS-latest, windows-latest]
+        os: [ubuntu-20.04, macOS-latest, windows-latest]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -49,7 +49,7 @@ jobs:
       - code-style-check
       - test
     if: github.event_name == 'release' && github.event.action == 'created'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
@@ -71,7 +71,7 @@ jobs:
   publish-docs:
     needs:
       - publish
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
