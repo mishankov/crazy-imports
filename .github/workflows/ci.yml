@@ -79,4 +79,5 @@ jobs:
           python-version: 3.x
       - run: pip install mkdocs-material
       - run: cp README.md docs/index.md
+      - run: cp CONTRIBUTING.md docs/contributing.md;
       - run: mkdocs gh-deploy --force

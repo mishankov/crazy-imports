@@ -40,6 +40,7 @@ build-package:
 prepare-docs:
 	( \
 		cp README.md docs/index.md; \
+		cp CONTRIBUTING.md docs/contributing.md; \
 	)
 
 prepare-push: lint prepare-docs
