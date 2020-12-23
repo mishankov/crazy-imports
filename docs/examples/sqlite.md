@@ -25,7 +25,7 @@ Then create python file like this
 import crazyimports
 import database
 
-print(database.table[0]["code"])
+print(database.table[0]["text"])
 ```
 
 All tables from SQLite file stored in attributes of a imported module
