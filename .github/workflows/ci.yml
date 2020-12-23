@@ -7,9 +7,27 @@ on:
     branches: [ main ]
   release:
     types: [ created ]
+  schedule:
+    - cron: '0 0 * * 6'
 
 jobs:
-  code-style-check:
+  check-code-security:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'python' ]
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+  
+  check-code-style:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -46,7 +64,8 @@ jobs:
   
   publish:
     needs:
-      - code-style-check
+      - check-code-security
+      - check-code-style
       - test
     if: github.event_name == 'release' && github.event.action == 'created'
     runs-on: ubuntu-latest
