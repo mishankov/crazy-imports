@@ -69,7 +69,8 @@ jobs:
   
   publish:
     needs:
-      - code-style-check
+      - check-code-security
+      - check-code-style
       - test
     if: github.event_name == 'release' && github.event.action == 'created'
     runs-on: ubuntu-latest
