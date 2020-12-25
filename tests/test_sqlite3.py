@@ -1,5 +1,5 @@
 import crazyimports
-import tests.test_data.database_sqlite3 as database
+import tests.test_data.generated.database_sqlite3 as database
 
 
 def test_sqlite_file_type():

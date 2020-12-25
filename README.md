@@ -45,6 +45,7 @@ You can find more examles in exaples section of [documentation](https://mishanko
 - `.sqlite3` and `.sqlite` for SQLite3 database files
 - `.csv` for CSV (Comma Separated Values) files
 - `.yaml` and `.yml` for YAML files
+- `.pickle` for pickle files
 
 ## Credits
 

@@ -2,6 +2,7 @@
 
 [![CI/CD](https://github.com/mishankov/crazy-imports/workflows/CI/CD/badge.svg)](https://github.com/mishankov/crazy-imports/actions?query=workflow:CI/CD)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-black)](https://github.com/mishankov/crazy-imports/actions?query=workflow:CI/CD)
+[![CodeFactor](https://www.codefactor.io/repository/github/mishankov/crazy-imports/badge)](https://www.codefactor.io/repository/github/mishankov/crazy-imports)
 [![PyPI](https://img.shields.io/pypi/v/crazyimports)](https://pypi.org/project/crazyimports/)
 [![Downloads](https://pepy.tech/badge/crazyimports)](https://pepy.tech/project/crazyimports)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/crazyimports)
@@ -44,6 +45,7 @@ You can find more examles in exaples section of [documentation](https://mishanko
 - `.sqlite3` and `.sqlite` for SQLite3 database files
 - `.csv` for CSV (Comma Separated Values) files
 - `.yaml` and `.yml` for YAML files
+- `.pickle` for pickle files
 
 ## Credits
 
