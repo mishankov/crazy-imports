@@ -7,7 +7,7 @@ def test_yaml_file_type():
 
 
 def test_yaml_integer_type():
-    assert type(config.number) == int
+    assert isinstance(config.number, int)
 
 
 def test_yaml_integer_value():
@@ -15,7 +15,7 @@ def test_yaml_integer_value():
 
 
 def test_yaml_string_type():
-    assert type(config.string) == str
+    assert isinstance(config.string, str)
 
 
 def test_yaml_string_value():

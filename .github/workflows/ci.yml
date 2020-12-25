@@ -26,7 +26,7 @@ jobs:
         languages: ${{ matrix.language }}
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
-  
+
   check-code-style:
     runs-on: ubuntu-latest
     steps:
@@ -39,7 +39,7 @@ jobs:
         run: pip install black
       - name: Run black --check .
         run: black --check .
-  
+
   test:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -61,7 +61,7 @@ jobs:
       run: |
         python tests/utils/init_db.py
         python -m pytest
-  
+
   publish:
     needs:
       - check-code-security

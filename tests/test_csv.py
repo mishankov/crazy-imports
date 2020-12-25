@@ -9,4 +9,4 @@ def test_csv_file_type():
 def test_csv_types():
     for row in table.data:
         for number in row:
-            assert type(int(number)) == int
+            assert isinstance(int(number), int)

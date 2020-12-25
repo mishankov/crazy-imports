@@ -19,7 +19,8 @@ class SQLite3(ExDataLoader):
 
         data = {}
         for table in tables:
-            cur.execute("SELECT * FROM {}".format(table["name"]))
+            query = "SELECT * FROM {}".format(table["name"])
+            cur.execute(query)
             data[table["name"]] = cur.fetchall()
 
         return data
