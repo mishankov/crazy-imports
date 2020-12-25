@@ -26,7 +26,7 @@ class ExDataLoader(importlib.abc.Loader):
     extensions = []
 
     def repack(self, mod, data):
-        if type(data) == dict:
+        if isinstance(data, dict):
             for k, v in data.items():
                 if k.startswith("__") and k.endswith("__") or hasattr(mod, k):
                     continue
