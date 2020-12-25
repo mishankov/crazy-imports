@@ -7,7 +7,7 @@ def test_sqlite_file_type():
 
 
 def test_sqlite_text_type():
-    assert type(database.text_table[0]["text"]) == str
+    assert isinstance(database.text_table[0]["text"], str)
 
 
 def test_sqlite_text_value():
@@ -15,7 +15,7 @@ def test_sqlite_text_value():
 
 
 def test_sqlite_integer_type():
-    assert type(database.text_table[0]["id"]) == int
+    assert isinstance(database.text_table[0]["id"], int)
 
 
 def test_sqlite_integer_value():
