@@ -2,6 +2,7 @@
 
 [![CI/CD](https://github.com/mishankov/crazy-imports/workflows/CI/CD/badge.svg)](https://github.com/mishankov/crazy-imports/actions?query=workflow:CI/CD)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-black)](https://github.com/mishankov/crazy-imports/actions?query=workflow:CI/CD)
+[![CodeFactor](https://www.codefactor.io/repository/github/mishankov/crazy-imports/badge)](https://www.codefactor.io/repository/github/mishankov/crazy-imports)
 [![PyPI](https://img.shields.io/pypi/v/crazyimports)](https://pypi.org/project/crazyimports/)
 [![Downloads](https://pepy.tech/badge/crazyimports)](https://pepy.tech/project/crazyimports)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/crazyimports)

@@ -8,4 +8,4 @@ class Pickle(ExDataLoader):
         self.repack(mod, data)
 
     def load_data(self, data):
-        return {"data": pickle.load(data)}
+        return {"data": pickle.load(data)}  # nosec
