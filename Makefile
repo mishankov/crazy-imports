@@ -23,10 +23,10 @@ lint:
 test: install
 	( \
 		. venv/bin/activate; \
-		python tests/utils/init_db.py; \
+		mkdir tests/test_data/generated/; \
+		python tests/utils/init_data.py; \
 		python -m pytest; \
-		rm tests/test_data/database_sqlite.sqlite; \
-		rm tests/test_data/database_sqlite3.sqlite3; \
+		rm -rf tests/test_data/generated/; \
 	)
 
 build-package: 
