@@ -19,8 +19,7 @@ class SQLite3(ExDataLoader):
 
         data = {}
         for table in tables:
-            query = "SELECT * FROM {}".format(table["name"])
-            cur.execute(query)
+            cur.execute("SELECT * FROM {}".format(table["name"]))  # nosec
             data[table["name"]] = cur.fetchall()
 
         return data
