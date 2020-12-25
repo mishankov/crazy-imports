@@ -39,30 +39,3 @@ dev-prepare-docs:
 	)
 
 dev-prepare-push: dev-lint dev-prepare-docs
-
-
-# ----------- CI tools
-
-ci-lint:
-	pip install black
-	black --check .
-
-ci-test:
-	python3 -m venv venv
-	. venv/bin/activate
-	pip install -r requirements-test.txt
-	mkdir tests/test_data/generated/
-	python tests/utils/init_data.py
-	python -m pytest
-
-ci-publish:
-	python -m pip install --upgrade pip; \
-	pip install setuptools wheel twine; \
-	python setup.py sdist bdist_wheel; \
-	twine upload dist/*; \
-
-ci-publish-docs:
-	pip install mkdocs-material
-	cp README.md docs/index.md
-	cp CONTRIBUTING.md docs/contributing.md
-	mkdocs gh-deploy --force

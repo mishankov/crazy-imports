@@ -36,7 +36,9 @@ jobs:
         with:
           python-version: 3.7
       - name: Check code style
-        run: make ci-lint
+        run: |
+          pip install black
+          black --check .
 
   test:
     runs-on: ${{ matrix.os }}
@@ -52,7 +54,13 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Test Application
-      run: make ci-test
+      run: |
+        python3 -m venv venv
+        . venv/bin/activate
+        pip install -r requirements-test.txt
+        mkdir tests/test_data/generated/
+        python tests/utils/init_data.py
+        python -m pytest
 
   publish:
     needs:
@@ -71,7 +79,11 @@ jobs:
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: make ci-publish
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+        python setup.py sdist bdist_wheel
+        twine upload dist/*
 
   publish-docs:
     needs:
@@ -83,4 +95,8 @@ jobs:
         with:
           python-version: 3.x
       - name: Publish docs
-        run: make ci-publish-docs
+        run: |
+          pip install mkdocs-material
+          cp README.md docs/index.md
+          cp CONTRIBUTING.md docs/contributing.md
+          mkdocs gh-deploy --force
