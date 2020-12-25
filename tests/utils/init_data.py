@@ -16,20 +16,12 @@ def init_db(extension: str):
     conn.close()
 
 
-class TestClass:
-    def __init__(a: int, b: int):
-        self.a = a
-        self.b = b
-
-    def sum(self) -> int:
-        return self.a + self.b
-
-
 def init_pickle():
     test_list = [1, 2, 3, 4, 5]
+    test_dict = {"key": "value"}
 
     with open("tests/test_data/generated/pickle_file.pickle", "wb") as file:
-        pickle.dump((test_list), file)
+        pickle.dump((test_list, test_dict), file)
 
 
 if __name__ == "__main__":

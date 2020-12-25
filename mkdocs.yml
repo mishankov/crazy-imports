@@ -18,6 +18,7 @@ nav:
     - YAML: 'examples/yaml.md'
     - CSV: 'examples/csv.md'
     - SQLite: 'examples/sqlite.md'
+    - Pickle: 'examples/pickle.md'
   - Contributing: 'contributing.md'
   - Credits: 'credits.md'
 markdown_extensions:
