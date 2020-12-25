@@ -59,6 +59,7 @@ jobs:
         pip install -r requirements-test.txt;
     - name: Run Tests
       run: |
+        mkdir tests/test_data/generated/
         python tests/utils/init_data.py
         python -m pytest
 
