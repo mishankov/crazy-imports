@@ -8,6 +8,7 @@
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/crazyimports)
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/crazyimports)
 [![PyPI - License](https://img.shields.io/pypi/l/crazyimports)](https://github.com/mishankov/crazy-imports/blob/main/LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmishankov%2Fcrazy-imports.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmishankov%2Fcrazy-imports?ref=badge_shield)
 
 `crazyimports` module allows you to use your data files as if it was python modules
 
@@ -50,3 +51,7 @@ You can find more examles in exaples section of [documentation](https://mishanko
 ## Credits
 
 Heavily inspired by [this talk](https://youtu.be/CWZVNgStgbI) by [@bobuk](https://github.com/bobuk)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmishankov%2Fcrazy-imports.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmishankov%2Fcrazy-imports?ref=badge_large)
