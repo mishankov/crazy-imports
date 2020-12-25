@@ -35,10 +35,8 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
-      - name: Install Black
-        run: pip install black
-      - name: Run black --check .
-        run: black --check .
+      - name: Check code style
+        run: make ci-lint
 
   test:
     runs-on: ${{ matrix.os }}
@@ -53,15 +51,8 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install Application
-      run: |
-        python setup.py install
-        pip install -r requirements-test.txt;
-    - name: Run Tests
-      run: |
-        mkdir tests/test_data/generated/
-        python tests/utils/init_data.py
-        python -m pytest
+    - name: Test Application
+      run: make ci-test
 
   publish:
     needs:
@@ -76,17 +67,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install setuptools wheel twine
-    - name: Build and publish
+    - name: Publish package
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: |
-        python setup.py sdist bdist_wheel
-        twine upload dist/*
+      run: make ci-publish
 
   publish-docs:
     needs:
@@ -97,7 +82,5 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: cp README.md docs/index.md
-      - run: cp CONTRIBUTING.md docs/contributing.md;
-      - run: mkdocs gh-deploy --force
+      - name: Publish docs
+        run: make ci-publish-docs

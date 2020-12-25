@@ -1,5 +1,5 @@
 import csv
-from crazyimports.common import ExDataLoader
+from ._common import ExDataLoader
 
 
 class CSV(ExDataLoader):
