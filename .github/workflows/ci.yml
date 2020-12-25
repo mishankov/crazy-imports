@@ -59,7 +59,7 @@ jobs:
         pip install -r requirements-test.txt;
     - name: Run Tests
       run: |
-        python tests/utils/init_db.py
+        python tests/utils/init_data.py
         python -m pytest
 
   publish:
