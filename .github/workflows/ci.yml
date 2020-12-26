@@ -74,7 +74,7 @@ jobs:
         key: ${{ matrix.os }}-${{ matrix.python-version }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
         restore-keys: |
           ${{ matrix.os }}-${{ matrix.python-version }}-pip-
-          ${{ matrix.os }}-${{ matrix.python-version }}-    
+          ${{ matrix.os }}-${{ matrix.python-version }}-
         - name: Check code style
       run: make ci-lint
 
