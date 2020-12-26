@@ -31,10 +31,10 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ matrix.os }}-${{ matrix.python-version }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
+        key: ${{ matrix.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
         restore-keys: |
-          ${{ matrix.os }}-${{ matrix.python-version }}-pip-
-          ${{ matrix.os }}-${{ matrix.python-version }}-
+          ${{ matrix.os }}-pip-
+          ${{ matrix.os }}-
     - name: Install dependencies
       run: pip install -r requirements-test.txt -r requirements-dev.txt
 
@@ -75,10 +75,10 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
+        key: ${{ matrix.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
         restore-keys: |
-          ${{ runner.os }}-pip-
-          ${{ runner.os }}-
+          ${{ matrix.os }}-pip-
+          ${{ matrix.os }}-
     - name: Check code style
       run: make ci-lint
 
@@ -103,10 +103,10 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
+        key: ${{ matrix.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
         restore-keys: |
-          ${{ runner.os }}-pip-
-          ${{ runner.os }}-
+          ${{ matrix.os }}-pip-
+          ${{ matrix.os }}-
     - name: Test Application
       run: make ci-test
 
@@ -134,10 +134,10 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
+        key: ${{ matrix.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
         restore-keys: |
-          ${{ runner.os }}-pip-
-          ${{ runner.os }}-
+          ${{ matrix.os }}-pip-
+          ${{ matrix.os }}-
     - name: Publish package
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
@@ -164,9 +164,9 @@ jobs:
       uses: actions/cache@v2
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
+        key: ${{ matrix.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
         restore-keys: |
-          ${{ runner.os }}-pip-
-          ${{ runner.os }}-
+          ${{ matrix.os }}-pip-
+          ${{ matrix.os }}-
     - name: Publish docs
       run: make ci-publish-docs
