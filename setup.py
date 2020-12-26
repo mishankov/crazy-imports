@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="crazyimports",
-    version="version",
+    version=version,
     author="Denis Mishankov",
     author_email="mishankov@mail.com",
     description="Treat your data as your code",
