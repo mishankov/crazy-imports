@@ -37,7 +37,7 @@ print(example.number)
 
 Then when you run `python test.py` you would see `42` output in your command line
 
-You can find more examles in exaples section of [documentation](https://mishankov.github.io/crazy-imports/)
+You can find more examples in examples section of [documentation](https://mishankov.github.io/crazy-imports/)
 
 ## Supported file extensions
 
