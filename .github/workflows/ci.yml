@@ -57,13 +57,17 @@ jobs:
 
   check-code-style:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: [ 3.9 ]
+        os: [ ubuntu-latest ]
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Python 3.7
+    - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
-        python-version: 3.7
+        python-version: ${{ matrix.python-version }}
     - name: Get pip cache dir
       id: pip-cache
       run: echo "::set-output name=dir::$(pip cache dir)"
@@ -112,13 +116,17 @@ jobs:
     - check-code-style
     - test
     if: github.event_name == 'release' && github.event.action == 'created'
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: [ 3.9 ]
+        os: [ ubuntu-latest ]
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python
+    - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: ${{ matrix.python-version }}
     - name: Get pip cache dir
       id: pip-cache
       run: echo "::set-output name=dir::$(pip cache dir)"
@@ -138,12 +146,17 @@ jobs:
 
   publish-docs:
     needs: publish
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: [ 3.9 ]
+        os: [ ubuntu-latest ]
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.x
+        python-version: ${{ matrix.python-version }}
     - name: Get pip cache dir
       id: pip-cache
       run: echo "::set-output name=dir::$(pip cache dir)"
