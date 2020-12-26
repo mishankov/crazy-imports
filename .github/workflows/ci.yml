@@ -11,7 +11,34 @@ on:
     - cron: '0 0 * * 6'
 
 jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+        max-parallel: 4
+        matrix:
+          python-version: [3.6, 3.7, 3.8, 3.9]
+          os: [ubuntu-latest, macOS-latest, windows-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Cache pip
+      uses: actions/cache@v2
+      with:
+        # This path is specific to Ubuntu
+        path: ~/.cache/pip
+        # Look to see if there is a cache hit for the corresponding requirements file
+        key: ${{ matrix.os }}-${{ matrix.python-version }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
+        restore-keys: |
+          ${{ matrix.os }}-${{ matrix.python-version }}-pip-
+          ${{ matrix.os }}-${{ matrix.python-version }}-
+    - name: Install dependencies
+      run: pip install -r requirements-test.txt -r requirements-dev.txt
+
   check-code-security:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -28,6 +55,7 @@ jobs:
       uses: github/codeql-action/analyze@v1
 
   check-code-style:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -39,6 +67,7 @@ jobs:
         run: make ci-lint
 
   test:
+    needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 4
@@ -74,8 +103,7 @@ jobs:
       run: make ci-publish
 
   publish-docs:
-    needs:
-      - publish
+    needs: publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
