@@ -10,6 +10,3 @@ class CSV(ExDataLoader):
             mod.raw_data = reader
             for row in reader:
                 mod.data.append(row)
-
-    def load_data(self, data):
-        return {"data": [row for row in csv.reader(data)]}

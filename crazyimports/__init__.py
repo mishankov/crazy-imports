@@ -1,3 +1,4 @@
+"""crazyimports module allows you to use your data files as if it was python modules"""
 import sys
 
 from ._common import ExPathFinder
