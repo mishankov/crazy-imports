@@ -80,6 +80,7 @@ jobs:
         ${{ runner.os }}-pip-
         ${{ runner.os }}-
         - name: Check code style
+    - name: Run lint
       run: make ci-lint
 
   test:
