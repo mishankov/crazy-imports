@@ -1,5 +1,5 @@
 import pickle
-from crazyimports.common import ExDataLoader
+from ._common import ExDataLoader
 
 
 class Pickle(ExDataLoader):
