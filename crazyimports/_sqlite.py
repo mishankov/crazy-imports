@@ -1,5 +1,5 @@
 import sqlite3
-from crazyimports.common import ExDataLoader
+from ._common import ExDataLoader
 
 
 class SQLite3(ExDataLoader):

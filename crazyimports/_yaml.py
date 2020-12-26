@@ -1,4 +1,4 @@
-from crazyimports.common import ExDataLoader
+from ._common import ExDataLoader
 
 
 class YAML(ExDataLoader):

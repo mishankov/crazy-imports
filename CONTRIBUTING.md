@@ -9,20 +9,20 @@
 
 ## Useful commands
 
-First, you need to install all dev depenencies
+First, you need to prepare development environment
 
 ```bash
-make install-dev
+make dev-env
 ```
 
 After you made changes and wrote tests for them, run the tests
 
 ```bash
-make test
+make dev-test
 ```
 
 Before commit run this to make sure your code is properly formatted and documentation is up to date
 
 ```bash
-make prepare-push
+make dev-prepare-push
 ```

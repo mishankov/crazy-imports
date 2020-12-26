@@ -1,18 +1,23 @@
+import re
 import setuptools
+
+with open("crazyimports/__init__.py", "r") as file:
+    regex_version = r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]'
+    version = re.search(regex_version, file.read(), re.MULTILINE).group(1)
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="crazyimports",
-    version="0.1.0",
+    version=version,
     author="Denis Mishankov",
     author_email="mishankov@mail.com",
     description="Treat your data as your code",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/mishankov/crazy-imports",
-    packages=[package for package in setuptools.find_packages() if package != "tests"],
+    packages=["crazyimports"],
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
