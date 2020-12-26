@@ -76,11 +76,10 @@ jobs:
       with:
         path: ${{ steps.pip-cache.outputs.dir }}
         key: ${{ runner.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
-      restore-keys: |
-        ${{ runner.os }}-pip-
-        ${{ runner.os }}-
-        - name: Check code style
-    - name: Run lint
+        restore-keys: |
+          ${{ runner.os }}-pip-
+          ${{ runner.os }}-
+    - name: Check code style
       run: make ci-lint
 
   test:
