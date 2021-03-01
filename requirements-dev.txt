@@ -11,7 +11,7 @@ lunr==0.5.8
 Markdown==3.3.4
 MarkupSafe==1.1.1
 mkdocs==1.1.2
-mkdocs-material==7.0.2
+mkdocs-material==7.0.3
 mkdocs-material-extensions==1.0.1
 mypy-extensions==0.4.3
 nltk==3.5
