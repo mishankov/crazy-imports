@@ -24,7 +24,7 @@ pymdown-extensions==8.1.1
 pyparsing==2.4.7
 pytest==6.2.2
 PyYAML==5.4.1
-regex==2020.11.13
+regex==2021.4.4
 six==1.15.0
 toml==0.10.2
 tornado==6.1
