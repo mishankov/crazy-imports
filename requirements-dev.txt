@@ -20,7 +20,7 @@ pathspec==0.8.1
 pluggy==0.13.1
 py==1.10.0
 Pygments==2.9.0
-pymdown-extensions==8.1.1
+pymdown-extensions==8.2
 pyparsing==2.4.7
 pytest==6.2.4
 PyYAML==5.4.1
