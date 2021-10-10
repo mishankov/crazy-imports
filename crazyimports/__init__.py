@@ -8,7 +8,7 @@ from ._pickle import Pickle
 from ._sqlite import SQLite3
 from ._yaml import YAML
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 __all__ = []
 
