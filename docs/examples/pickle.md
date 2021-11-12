@@ -1,6 +1,6 @@
 # Pickle
 
-Create file with the name `init_pickle.py` and the folowing script
+Create file with the name `init_pickle.py` and the following script
 
 ```python
 import pickle

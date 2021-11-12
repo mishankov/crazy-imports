@@ -3,7 +3,7 @@
 ## Project structure
 
 - `/crazyimports` - module itself
-- `/examples` - examplese of using crazyimports
+- `/examples` - examples of using crazyimports
 - `/tests` - tests for crazyimports
 - `/docs` - markdown files to generate documentation with `mkdocs`
 
