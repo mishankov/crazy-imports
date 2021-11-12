@@ -7,8 +7,9 @@ from ._json import JSON
 from ._pickle import Pickle
 from ._sqlite import SQLite3
 from ._yaml import YAML
+from ._toml import TOML
 
-__version__ = "0.1.2"
+__version__ = "0.2.0"
 
 __all__ = []
 

@@ -19,13 +19,13 @@ setuptools.setup(
     url="https://github.com/mishankov/crazy-imports",
     packages=["crazyimports"],
     classifiers=[
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.7",
-    extras_require={"yaml": ["PyYAML==5.4.1"]},
+    extras_require={"yaml": ["PyYAML==6.0"], "toml": ["toml==0.10.2"]},
 )
