@@ -11,3 +11,9 @@ If you need YAML files support run the following command
 ```bash
 pip install -U "crazyimports[yaml]"
 ```
+
+If you need toml files support run the following command
+
+```bash
+pip install -U "crazyimports[toml]"
+```
