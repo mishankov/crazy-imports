@@ -46,6 +46,7 @@ You can find more examples in examples section of [documentation](https://mishan
 - `.csv` for CSV (Comma Separated Values) files
 - `.yaml` and `.yml` for YAML files
 - `.pickle` for pickle files
+- `.toml` for toml files
 
 ## Credits
 
