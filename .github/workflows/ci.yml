@@ -36,7 +36,7 @@ jobs:
           ${{ matrix.os }}-pip-
           ${{ matrix.os }}-
     - name: Install dependencies
-      run: pip install -r piter_envs/dependencies.lock
+      run: pip install -r piter_envs/ci/dependencies.lock
 
   check-code-security:
     needs: build
