@@ -36,7 +36,7 @@ jobs:
           ${{ matrix.os }}-pip-
           ${{ matrix.os }}-
     - name: Install dependencies
-      run: pip install -r requirements-test.txt -r requirements-dev.txt
+      run: pip install -r piter_envs/dependencies.lock piter
 
   check-code-security:
     needs: build
@@ -80,7 +80,7 @@ jobs:
           ${{ matrix.os }}-pip-
           ${{ matrix.os }}-
     - name: Check code style
-      run: make ci-lint
+      run: piter run -e ci lint
 
   test:
     needs: build
@@ -108,7 +108,7 @@ jobs:
           ${{ matrix.os }}-pip-
           ${{ matrix.os }}-
     - name: Test Application
-      run: make ci-test
+      run: piter run -e ci test
 
   publish:
     needs:
@@ -142,7 +142,7 @@ jobs:
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: make ci-publish
+      run: piter run -e ci publish
 
   publish-docs:
     needs: publish
@@ -169,4 +169,4 @@ jobs:
           ${{ matrix.os }}-pip-
           ${{ matrix.os }}-
     - name: Publish docs
-      run: make ci-publish-docs
+      run: piter run -e ci publish-docs

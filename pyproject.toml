@@ -1,0 +1,62 @@
+[tools.piter]
+dependencies = [
+	"PyYAML==6.0",
+	"toml==0.10.2"
+]
+
+[tools.piter.env.test]
+dependencies = [
+	"pytest==6.2.4", 
+]
+scripts.test = [
+	"mkdir tests/test_data/generated/", 
+	"python tests/utils/init_data.py", 
+	"pytest", 
+	"rm -rf tests/test_data/generated/"
+]
+
+[tools.piter.env.dev]
+dependencies = [
+	"black==21.5b1",
+]
+
+scripts.lint = "black ."
+scripts.prepare-docs = [
+	"cp README.md docs/index.md",
+	"cp CONTRIBUTING.md docs/contributing.md"
+]
+scripts.prepare-push = [
+	"piter run -e dev lint",
+	"piter run -e dev prepare-docs"
+]
+
+[tools.piter.env.ci]
+dependencies = [
+	"black==21.5b1",
+	"pytest==6.2.4",
+	"mkdocs-material==7.1.3",
+	"wheel",
+	"twine",
+	"mkdocs-material"
+]
+scripts.lint = [
+	"black --check ."
+]
+
+scripts.test = [
+	"mkdir tests/test_data/generated/", 
+	"python tests/utils/init_data.py", 
+	"pytest", 
+	"rm -rf tests/test_data/generated/"
+]
+
+scripts.publish = [
+	"python setup.py sdist bdist_wheel",
+	"twine upload dist/*",
+]
+
+scripts.publish-docs = [
+	"cp README.md docs/index.md",
+	"cp CONTRIBUTING.md docs/contributing.md",
+	"mkdocs gh-deploy --force",
+]
