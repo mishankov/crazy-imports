@@ -22,6 +22,7 @@ mkdocs-material-extensions==1.0.3
 mypy-extensions==0.4.3
 packaging==21.2
 pathspec==0.9.0
+piter @ git+https://github.com/mishankov/piter.git@faf1a6efe3466ffe6d7880fbbc84921c97b1dc9f
 pkginfo==1.7.1
 pluggy==0.13.1
 py==1.11.0
@@ -41,6 +42,7 @@ six==1.16.0
 toml==0.10.2
 tqdm==4.62.3
 twine==3.6.0
+typer==0.4.0
 urllib3==1.26.7
 watchdog==2.1.6
 webencodings==0.5.1
