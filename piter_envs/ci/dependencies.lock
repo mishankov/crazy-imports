@@ -22,7 +22,7 @@ mkdocs-material-extensions==1.0.3
 mypy-extensions==0.4.3
 packaging==21.2
 pathspec==0.9.0
-piter @ git+https://github.com/mishankov/piter.git@faf1a6efe3466ffe6d7880fbbc84921c97b1dc9f
+piter @ git+https://github.com/mishankov/piter.git@main
 pkginfo==1.7.1
 pluggy==0.13.1
 py==1.11.0
