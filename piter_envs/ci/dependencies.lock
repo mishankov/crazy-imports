@@ -13,22 +13,21 @@ importlib-metadata==4.8.2
 iniconfig==1.1.1
 Jinja2==3.0.3
 keyring==23.2.1
-Markdown==3.3.4
+Markdown==3.3.6
 MarkupSafe==2.0.1
 mergedeep==1.3.4
 mkdocs==1.2.3
 mkdocs-material==7.1.3
 mkdocs-material-extensions==1.0.3
 mypy-extensions==0.4.3
-packaging==21.2
+packaging==21.3
 pathspec==0.9.0
-piter @ git+https://github.com/mishankov/piter.git@main
-pkginfo==1.7.1
+pkginfo==1.8.1
 pluggy==0.13.1
 py==1.11.0
 Pygments==2.10.0
 pymdown-extensions==9.1
-pyparsing==2.4.7
+pyparsing==3.0.6
 pytest==6.2.4
 python-dateutil==2.8.2
 PyYAML==6.0
@@ -42,7 +41,6 @@ six==1.16.0
 toml==0.10.2
 tqdm==4.62.3
 twine==3.6.0
-typer==0.4.0
 urllib3==1.26.7
 watchdog==2.1.6
 webencodings==0.5.1

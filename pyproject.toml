@@ -37,8 +37,7 @@ dependencies = [
 	"mkdocs-material==7.1.3",
 	"wheel",
 	"twine",
-	"mkdocs-material",
-	"git+https://github.com/mishankov/piter.git@main#egg=piter"
+	"mkdocs-material"
 ]
 scripts.lint = [
 	"black --check ."

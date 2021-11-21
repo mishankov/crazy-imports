@@ -29,7 +29,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
-      run: pip install -r piter_envs/ci/dependencies.lock
+      run: pip install piter && piter env ci -i
 
   check-code-security:
     needs: build
@@ -77,7 +77,7 @@ jobs:
           ${{ matrix.os }}-pip-
           ${{ matrix.os }}-
     - name: Check code style
-      run: pip install -r piter_envs/ci/dependencies.lock && piter env ci -i && piter run -e ci lint
+      run: pip install piter && piter env ci -i && piter run -e ci lint
 
   test:
     needs: build
@@ -98,7 +98,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Test Application
-      run: pip install -r piter_envs/ci/dependencies.lock && piter env ci -i && piter run -e ci test
+      run: pip install piter && piter env ci -i && piter run -e ci test
 
   publish:
     needs:
@@ -125,7 +125,7 @@ jobs:
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: pip install -r piter_envs/ci/dependencies.lock && piter env ci -i && piter run -e ci publish
+      run: pip install piter && piter env ci -i && piter run -e ci publish
 
   publish-docs:
     needs: publish
@@ -145,4 +145,4 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Publish docs
-      run: pip install -r piter_envs/ci/dependencies.lock && piter env ci -i && piter run -e ci publish-docs
+      run: pip install piter && piter env ci -i && piter run -e ci publish-docs
