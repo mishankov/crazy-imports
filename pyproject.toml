@@ -46,7 +46,7 @@ scripts.lint = [
 scripts.test = [
 	"mkdir tests/test_data/generated/", 
 	"python tests/utils/init_data.py", 
-	"pytest", 
+	"python -m pytest", 
 	"rm -rf tests/test_data/generated/"
 ]
 
