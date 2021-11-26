@@ -31,53 +31,53 @@ jobs:
   #   - name: Install dependencies
   #     run: pip install piter && piter env ci -i
 
-  check-code-security:
-    needs: build
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'python' ]
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
-      with:
-        languages: ${{ matrix.language }}
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+  # check-code-security:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       language: [ 'python' ]
+  #   steps:
+  #   - name: Checkout repository
+  #     uses: actions/checkout@v2
+  #   - name: Initialize CodeQL
+  #     uses: github/codeql-action/init@v1
+  #     with:
+  #       languages: ${{ matrix.language }}
+  #   - name: Perform CodeQL Analysis
+  #     uses: github/codeql-action/analyze@v1
 
-  check-code-style:
-    needs: build
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        python-version: [ '3.10' ]
-        os: [ ubuntu-latest ]
-    steps:
-    - uses: fusion-engineering/setup-git-credentials@v2
-      with:
-        credentials: ${{secrets.GIT_CREDENTIALS}}
+  # check-code-style:
+  #   needs: build
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     matrix:
+  #       python-version: [ '3.10' ]
+  #       os: [ ubuntu-latest ]
+  #   steps:
+  #   - uses: fusion-engineering/setup-git-credentials@v2
+  #     with:
+  #       credentials: ${{secrets.GIT_CREDENTIALS}}
 
-    - uses: actions/checkout@v1
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Get pip cache dir
-      id: pip-cache
-      run: echo "::set-output name=dir::$(pip cache dir)"
-    - name: Cache pip
-      uses: actions/cache@v2
-      with:
-        path: ${{ steps.pip-cache.outputs.dir }}
-        key: ${{ matrix.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
-        restore-keys: |
-          ${{ matrix.os }}-pip-
-          ${{ matrix.os }}-
-    - name: Check code style
-      run: pip install piter && piter env ci -i && piter run -e ci lint
+  #   - uses: actions/checkout@v1
+  #   - name: Set up Python ${{ matrix.python-version }}
+  #     uses: actions/setup-python@v2
+  #     with:
+  #       python-version: ${{ matrix.python-version }}
+  #   - name: Get pip cache dir
+  #     id: pip-cache
+  #     run: echo "::set-output name=dir::$(pip cache dir)"
+  #   - name: Cache pip
+  #     uses: actions/cache@v2
+  #     with:
+  #       path: ${{ steps.pip-cache.outputs.dir }}
+  #       key: ${{ matrix.os }}-pip-${{ hashFiles('requirements-test.txt') }}-${{ hashFiles('requirements-dev.txt') }}
+  #       restore-keys: |
+  #         ${{ matrix.os }}-pip-
+  #         ${{ matrix.os }}-
+  #   - name: Check code style
+  #     run: pip install piter && piter env ci -i && piter run -e ci lint
 
   test:
     # needs: build
@@ -100,49 +100,49 @@ jobs:
     - name: Test Application
       run: pip install git+https://github.com/mishankov/piter.git && piter env ci -i && piter run -e ci test
 
-  publish:
-    needs:
-    - check-code-security
-    - check-code-style
-    - test
-    if: github.event_name == 'release' && github.event.action == 'created'
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        python-version: [ '3.10' ]
-        os: [ ubuntu-latest ]
-    steps:
-    - uses: fusion-engineering/setup-git-credentials@v2
-      with:
-        credentials: ${{secrets.GIT_CREDENTIALS}}
+  # publish:
+  #   needs:
+  #   - check-code-security
+  #   - check-code-style
+  #   - test
+  #   if: github.event_name == 'release' && github.event.action == 'created'
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     matrix:
+  #       python-version: [ '3.10' ]
+  #       os: [ ubuntu-latest ]
+  #   steps:
+  #   - uses: fusion-engineering/setup-git-credentials@v2
+  #     with:
+  #       credentials: ${{secrets.GIT_CREDENTIALS}}
 
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Publish package
-      env:
-        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      run: pip install piter && piter env ci -i && piter run -e ci publish
+  #   - uses: actions/checkout@v2
+  #   - name: Set up Python ${{ matrix.python-version }}
+  #     uses: actions/setup-python@v2
+  #     with:
+  #       python-version: ${{ matrix.python-version }}
+  #   - name: Publish package
+  #     env:
+  #       TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+  #       TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+  #     run: pip install piter && piter env ci -i && piter run -e ci publish
 
-  publish-docs:
-    needs: publish
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        python-version: [ '3.10' ]
-        os: [ ubuntu-latest ]
-    steps:
-    - uses: fusion-engineering/setup-git-credentials@v2
-      with:
-        credentials: ${{secrets.GIT_CREDENTIALS}}
+  # publish-docs:
+  #   needs: publish
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     matrix:
+  #       python-version: [ '3.10' ]
+  #       os: [ ubuntu-latest ]
+  #   steps:
+  #   - uses: fusion-engineering/setup-git-credentials@v2
+  #     with:
+  #       credentials: ${{secrets.GIT_CREDENTIALS}}
 
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Publish docs
-      run: pip install piter && piter env ci -i && piter run -e ci publish-docs
+  #   - uses: actions/checkout@v2
+  #   - name: Set up Python ${{ matrix.python-version }}
+  #     uses: actions/setup-python@v2
+  #     with:
+  #       python-version: ${{ matrix.python-version }}
+  #   - name: Publish docs
+  #     run: pip install piter && piter env ci -i && piter run -e ci publish-docs
