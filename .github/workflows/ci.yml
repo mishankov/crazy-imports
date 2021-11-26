@@ -80,7 +80,7 @@ jobs:
       run: pip install piter && piter env ci -i && piter run -e ci lint
 
   test:
-    needs: build
+    # needs: build
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 4
