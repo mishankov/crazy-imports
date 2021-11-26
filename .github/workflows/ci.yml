@@ -11,25 +11,25 @@ on:
     - cron: '0 0 * * 6'
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-        max-parallel: 4
-        matrix:
-          python-version: [3.7,'3.10']
-          os: [ubuntu-latest, macOS-latest, windows-latest]
-    steps:
-    - uses: fusion-engineering/setup-git-credentials@v2
-      with:
-        credentials: ${{secrets.GIT_CREDENTIALS}}
+  # build:
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #       max-parallel: 4
+  #       matrix:
+  #         python-version: [3.7,'3.10']
+  #         os: [ubuntu-latest, macOS-latest, windows-latest]
+  #   steps:
+  #   - uses: fusion-engineering/setup-git-credentials@v2
+  #     with:
+  #       credentials: ${{secrets.GIT_CREDENTIALS}}
 
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: pip install piter && piter env ci -i
+  #   - uses: actions/checkout@v2
+  #   - name: Set up Python ${{ matrix.python-version }}
+  #     uses: actions/setup-python@v2
+  #     with:
+  #       python-version: ${{ matrix.python-version }}
+  #   - name: Install dependencies
+  #     run: pip install piter && piter env ci -i
 
   check-code-security:
     needs: build
@@ -98,7 +98,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - name: Test Application
-      run: pip install piter && piter env ci -i && piter run -e ci test
+      run: pip install git+https://github.com/mishankov/piter.git && piter env ci -i && piter run -e ci test
 
   publish:
     needs:
