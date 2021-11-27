@@ -30,6 +30,7 @@ dev-test: dev-install
 		python tests/utils/init_data.py; \
 		coverage run -m pytest; \
 		rm -rf tests/test_data/generated/; \
+		coverage html; \
 		coverage report; \
 	)
 
