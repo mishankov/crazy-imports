@@ -109,6 +109,10 @@ jobs:
           ${{ matrix.os }}-
     - name: Test Application
       run: make ci-test
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        fail_ci_if_error: false
 
   publish:
     needs:
