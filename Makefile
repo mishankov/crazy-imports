@@ -28,8 +28,9 @@ dev-test: dev-install
 		. venv/bin/activate; \
 		mkdir tests/test_data/generated/; \
 		python tests/utils/init_data.py; \
-		python -m pytest; \
+		coverage run -m pytest; \
 		rm -rf tests/test_data/generated/; \
+		coverage report; \
 	)
 
 dev-prepare-docs:
@@ -51,7 +52,8 @@ ci-test:
 	pip install -r requirements-test.txt
 	mkdir tests/test_data/generated/
 	python tests/utils/init_data.py
-	python -m pytest
+	coverage run -m pytest
+	coverage xml
 
 ci-publish:
 	python -m pip install --upgrade pip
