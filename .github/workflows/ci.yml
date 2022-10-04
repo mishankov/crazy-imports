@@ -36,23 +36,6 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements-test.txt -r requirements-dev.txt
 
-  check-code-security:
-    needs: build
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'python' ]
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
-      with:
-        languages: ${{ matrix.language }}
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
-
   check-code-style:
     needs: build
     runs-on: ${{ matrix.os }}
@@ -114,7 +97,6 @@ jobs:
 
   publish:
     needs:
-    - check-code-security
     - check-code-style
     - test
     if: github.event_name == 'release' && github.event.action == 'created'
