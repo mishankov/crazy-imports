@@ -1,6 +1,7 @@
 import re
 import setuptools
 
+
 with open("crazyimports/__init__.py", "r") as file:
     regex_version = r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]'
     version = re.search(regex_version, file.read(), re.MULTILINE).group(1)
@@ -23,6 +24,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
