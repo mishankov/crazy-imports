@@ -1,6 +1,7 @@
 import re
 import setuptools
 
+
 with open("crazyimports/__init__.py", "r") as file:
     regex_version = r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]'
     version = re.search(regex_version, file.read(), re.MULTILINE).group(1)
