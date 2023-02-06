@@ -13,7 +13,7 @@ MarkupSafe==1.1.1
 mkdocs==1.2.3
 mkdocs-material==7.1.3
 mkdocs-material-extensions==1.0.1
-mypy-extensions==0.4.3
+mypy-extensions==1.0.0
 nltk==3.6.6
 packaging==20.9
 pathspec==0.8.1
